@@ -18,7 +18,7 @@
 - Increases Collaboration
   Departments are better able to collaborate and share knowledge; a newly synergized workforce can improve productivity and employee satisfaction as employees are better able to see how each functional group contributes to the mission and vision of your company. Also, menial and manual tasks are eliminated, allowing employees to allocate their time to more meaningful work.
 
-# PERPETUAL ERP MODULES
+## PERPETUAL ERP MODULES
 
 # 1) Finance & Accounting - One of the most critical functions for businesses
 
