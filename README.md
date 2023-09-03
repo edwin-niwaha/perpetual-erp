@@ -1,15 +1,14 @@
 ## PERPETUAL ERP - DJANGO
 
-======================================================================================
-'''
-The system is easy to use and understand. It has a simple interface that allows you to perform all operations without any difficulties, which makes it easier for users to access their data.
+==========================================================================
 
-This software will help your company implement resource planning by integrating all the processes needed to run your companies with a single system.
-'''
+- The system is easy to use and understand. It has a simple interface that allows you to perform all operations without any difficulties, which makes it easier for users to access their data.
+
+- This software will help your company implement resource planning by integrating all the processes needed to run your companies with a single system.
 
 # Benefits of the software
 
-======================================================================================
+==========================================================================
 
 - Improves Accuracy and Productivity
   Integrating and automating business processes eliminates redundancies and improves accuracy and productivity. In addition, departments with interconnected processes can synchronize work to achieve faster and better outcomes.
@@ -25,7 +24,7 @@ This software will help your company implement resource planning by integrating 
 
 # PERPETUAL ERP MODULES
 
-======================================================================================
+==========================================================================
 
 # 1) Finance & Accounting - One of the most critical functions for businesses
 
@@ -66,8 +65,8 @@ It assists in employee on boarding processes and the management of employee data
 
 The analytics & reporting module in ERP provides real-time access to data and allows businesses to analyze data such as financial data, sales data, customer data, supplier data, etc at the primary or dashboard levels to get visibility to business processes and enable decision-making. Most ERPs allow the creation of custom reports.
 
-======================================================================================
+==========================================================================
 
 ## 1. Setup Cloned Project
 
-======================================================================================
+==========================================================================
