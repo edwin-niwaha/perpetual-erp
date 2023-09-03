@@ -1,14 +1,10 @@
 ## PERPETUAL ERP - DJANGO
 
-==========================================================================
-
 - The system is easy to use and understand. It has a simple interface that allows you to perform all operations without any difficulties, which makes it easier for users to access their data.
 
 - This software will help your company implement resource planning by integrating all the processes needed to run your companies with a single system.
 
 # Benefits of the software
-
-==========================================================================
 
 - Improves Accuracy and Productivity
   Integrating and automating business processes eliminates redundancies and improves accuracy and productivity. In addition, departments with interconnected processes can synchronize work to achieve faster and better outcomes.
@@ -23,8 +19,6 @@
   Departments are better able to collaborate and share knowledge; a newly synergized workforce can improve productivity and employee satisfaction as employees are better able to see how each functional group contributes to the mission and vision of your company. Also, menial and manual tasks are eliminated, allowing employees to allocate their time to more meaningful work.
 
 # PERPETUAL ERP MODULES
-
-==========================================================================
 
 # 1) Finance & Accounting - One of the most critical functions for businesses
 
@@ -68,5 +62,3 @@ The analytics & reporting module in ERP provides real-time access to data and al
 ==========================================================================
 
 ## 1. Setup Cloned Project
-
-==========================================================================
