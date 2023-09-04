@@ -62,3 +62,76 @@ The analytics & reporting module in ERP provides real-time access to data and al
 ==========================================================================
 
 ## 1. Setup Cloned Project
+
+```
+When you’re ready to start your new Django web application, create a new folder and navigate into it. In this folder, you’ll set up a new virtual environment using your command line:
+```
+
+# a) Setup / Prepare Virtual Environment
+
+```bash
+$ python -m venv .venv
+```
+
+# b) Activate the virtual environment
+
+```
+$ source .venv/Scripts/activate
+```
+
+# c) Install Django and Pin Your Dependencies
+
+```
+(.venv)$ python -m pip install django
+(.venv)$ python -m pip freeze > requirements.txt
+```
+
+```
+pip install ruff
+ruff check --fix . to check for issues and forced fix
+pip install pandas --powerful Python data analysis toolkit
+pip install openpyxl
+pip install Jinja2
+```
+
+# d) Set Up a Django Project
+
+```A Django project is a high-level unit of organization that contains logic that governs your whole web application.
+Each project can contain multiple apps.
+```
+
+(.venv)$ django-admin startproject <project-name>
+
+`OR If you want to avoid creating the additional top-level project folder add a . at the end`
+
+(.venv) $ django-admin startproject <projectname> .
+
+# e) Start a Django App
+
+```
+A Django app is a lower-level unit of your web application. You can have zero to many apps in a project,
+and you’ll usually have at least one app. You’ll learn more about apps in the next section.
+```
+
+(env) $ python manage.py startapp <appname>
+
+# f) Run Project
+
+_Note: For running the first time, create database tables_
+
+```bash
+(.venv)$ python manage.py makemigrations
+(.venv)$ python manage.py migrate
+```
+
+Then
+
+```bash
+(.venv)$ python manage.py runserver
+```
+
+Goto `http://127.0.0.1:8000/`
+
+## Contributors
+
+- [Edwin Niwaha](https://github.com/edwin-niwaha)

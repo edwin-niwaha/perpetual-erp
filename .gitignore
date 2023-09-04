@@ -1,0 +1,16 @@
+# Environments
+.env
+.venv
+
+# Bytecode/cache files
+__pycache__/
+*/migrations
+
+# Dev DB
+db.sqlite3
+
+#Node Packages
+node_modules
+package-lock.json
+package.json
+media
