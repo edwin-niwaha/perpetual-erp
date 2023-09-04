@@ -89,6 +89,8 @@ $ source .venv/Scripts/activate
 ```
 pip install ruff
 ruff check --fix . to check for issues and forced fix
+pip install python-dotenv
+pip install django-bootstrap-v5
 pip install pandas --powerful Python data analysis toolkit
 pip install openpyxl
 pip install Jinja2
