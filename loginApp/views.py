@@ -33,7 +33,7 @@ def sign_up_view(request):
                 login(request, user)
                 return HttpResponseRedirect(reverse("home"))
 
-            return HttpResponseRedirect(reverse("login_App:login_customer"))
+            return HttpResponseRedirect(reverse("loginApp:login_customer"))
 
         else:
             if User.objects.filter(username=request.POST["username"]).exists():

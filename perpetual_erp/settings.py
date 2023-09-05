@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     # apps
     "loginApp",
     "loanApp",
+    "managerApp",
     # others
     "bootstrap5",
+    "mathfilters",
+    "widget_tweaks",
 ]
 
 MIDDLEWARE = [

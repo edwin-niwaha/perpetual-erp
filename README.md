@@ -91,6 +91,9 @@ pip install ruff
 ruff check --fix . to check for issues and forced fix
 pip install python-dotenv
 pip install django-bootstrap-v5
+python -m pip install Pillow
+pip install django-widget-tweaks
+pip install django-mathfilters
 pip install pandas --powerful Python data analysis toolkit
 pip install openpyxl
 pip install Jinja2

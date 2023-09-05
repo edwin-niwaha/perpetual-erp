@@ -49,8 +49,8 @@
 
 {% block body_block %}
 {% include 'navbar.html' %}
-<div class="container p-5 my-5">
-    <div class="p-5 m-4 text-center alert alert-primary" role="alert">
+<div class="container-fluid">
+    <div class="p-1 m-4 text-center alert alert-primary" role="alert">
         <h1>User Dashboard</h1>
     </div>
     <div id="second-part">
@@ -83,9 +83,9 @@
                     <h3>Payable Loan</h3>
 
                     {% if totalPayable %}
-                    <h1><span id="digit">৳{{ totalPayable|sub:0 }}</span></h1>
+                    <h1><span id="digit">{{ totalPayable|sub:0 }}</span></h1>
                     {% else %}
-                    <h1><span id="digit">৳0</span></h1>
+                    <h1><span id="digit">0</span></h1>
                     {% endif %}
                 </div>
 
@@ -95,9 +95,9 @@
                     <h3>Approved Loan</h3>
 
                     {% if totalLoan %}
-                    <h1><span id="digit">৳{{totalLoan|sub:0}}</span></h1>
+                    <h1><span id="digit">{{totalLoan|sub:0}}</span></h1>
                     {% else %}
-                    <h1><span id="digit">৳0</span></h1>
+                    <h1><span id="digit">0</span></h1>
                     {% endif %}
                 </div>
 
@@ -107,9 +107,9 @@
                     <h3>Total Paid Loan</h3>
 
                     {% if totalPaid %}
-                    <h1><span id="digit">৳{{totalPaid|sub:0}}</span></h1>
+                    <h1><span id="digit">{{totalPaid|sub:0}}</span></h1>
                     {% else %}
-                    <h1><span id="digit">৳0</span></h1>
+                    <h1><span id="digit">0</span></h1>
                     {% endif %}
                 </div>
 
@@ -120,9 +120,9 @@
                     <h3>Total Due Loan</h3>
 
                     {% if totalPayable or totalPaid %}
-                    <h1><span id="digit">৳{{ totalPayable|sub:totalPaid }}</span></h1>
+                    <h1><span id="digit">{{ totalPayable|sub:totalPaid }}</span></h1>
                     {% else %}
-                    <h1><span id="digit">৳0</span></h1>
+                    <h1><span id="digit">0</span></h1>
                     {% endif %}
                 </div>
 

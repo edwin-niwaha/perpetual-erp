@@ -1,0 +1,39 @@
+<div class="l-navbar" id="nav-bar">
+   <nav class="nav">
+      <div> <a href="{% url 'managerApp:dashboard' %}" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i>
+            <span class="nav_logo-name">Perpetual ERP</span> </a>
+         <div>
+            <div class="nav_list">
+               <a href="{% url 'managerApp:dashboard' %}" class="nav_link">
+                  <i class='bx bx-grid-alt nav_icon'></i>
+                  <span class="nav_name">Dashboard</span> </a>
+
+               <a href="{% url 'managerApp:total_users' %}" class="nav_link">
+                  <i class='bx bx-user nav_icon'></i>
+                  <span class="nav_name">Users</span>
+               </a>
+               </a> <a href="{% url 'managerApp:transaction_loan' %}" class="nav_link">
+                  <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                  <span class="nav_name">Transactions</span>
+               </a>
+               </a> <a href="{% url 'managerApp:approved_loan' %}" class="nav_link">
+                  <span class="iconify" data-icon="bx:bxs-user-check" data-width="30" data-height="30"></span>
+                  <span class="nav_name">Approved Loan</span>
+               </a>
+               </a> <a href="{% url 'managerApp:loan_request' %}" class="nav_link">
+                  <span class="iconify" data-icon="codicon:request-changes" data-width="30" data-height="30"></span>
+                  <span class="nav_name">Request Loan</span>
+               </a>
+               </a> <a href="{% url 'managerApp:rejected_loan' %}" class="nav_link">
+                  <span class="iconify" data-icon="bx:bxs-user-x" data-width="30" data-height="30"></span>
+                  <span class="nav_name">Rejected Loan</span>
+               </a>
+               <a href="{% url 'managerApp:add_category' %}" class="nav_link">
+                  <span class="iconify" data-icon="bx:bxs-category" data-width="30" data-height="30"></span>
+                  <span class="nav_name">Add Category</span> </a>
+               <a href="{% url 'managerApp:logout' %}" class="nav_link"> <i class='bx bx-log-out nav_icon'></i>
+                  <span class="nav_name">SignOut</span> </a>
+            </div>
+         </div>
+   </nav>
+</div>

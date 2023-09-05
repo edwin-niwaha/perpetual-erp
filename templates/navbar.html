@@ -22,7 +22,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
         <!-- Container wrapper -->
         <div class="container-fluid">
             <!-- Toggle button -->
@@ -36,13 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Navbar brand -->
                 <a class="mt-2 navbar-brand mt-lg-0" href="/">
-                    <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="15" alt=""
-                        loading="lazy" />
+                    <img src="{% static 'images/logo.jpg' %}" height="30" width="30" alt="" loading="lazy" /> PERPETUAL
+                    ERP
                 </a>
                 <!-- Left links -->
                 <ul class="mb-2 navbar-nav me-auto mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">HOME</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
 
                     {% if user.is_authenticated %}
@@ -60,7 +60,6 @@
                     </li>
                     {% endif %}
 
-
                 </ul>
                 <!-- Left links -->
 
@@ -71,7 +70,7 @@
                         <a class="nav-link" href="{% url 'loanApp:loan_request'%}">Apply Loan</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{% url 'login_App:edit-customer'%}">Edit Info</a>
+                        <a class="nav-link" href="{% url 'loginApp:edit-customer'%}">Edit Info</a>
                     </li>
 
                     <li>
@@ -80,8 +79,6 @@
                     {% else %}
                     <li class="nav-item me-2">
                         <b> <a class="nav-link" href="/account/login-customer">Login</a></b>
-
-
                     </li>
                     <li class="nav-item">
                         <b> <a class="nav-link" href="/account/signup-customer">Signup</a></b>
@@ -91,8 +88,8 @@
                     </li>
 
                     {% endif %}
-
                 </ul>
+
             </div>
             <!-- Collapsible wrapper -->
 
@@ -100,12 +97,6 @@
 
             <!-- Right elements -->
             <div class="d-flex align-items-center">
-
-
-
-
-
-
 
             </div>
             <!-- Right elements -->

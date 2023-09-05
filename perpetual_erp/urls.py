@@ -9,7 +9,7 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("account/", include("loginApp.urls")),
     path("loan/", include("loanApp.urls")),
-    # path("manager/", include("managerApp.urls")),
+    path("manager/", include("managerApp.urls")),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
