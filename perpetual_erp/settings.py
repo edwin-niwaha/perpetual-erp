@@ -10,10 +10,6 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
-# STATIC_DIR = os.path.join(BASE_DIR, "static")
-# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -42,6 +38,8 @@ INSTALLED_APPS = [
     "managerApp",
     # others
     "bootstrap5",
+    "crispy_forms",
+    "crispy_bootstrap5",
     "mathfilters",
     "widget_tweaks",
 ]
@@ -61,7 +59,7 @@ ROOT_URLCONF = "perpetual_erp.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR, "templates"],
+        "DIRS": [os.path.join(BASE_DIR, "templates/")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -137,8 +135,11 @@ STATICFILES_DIRS = [BASE_DIR / "static/"]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
-
-# login url
+# Login & Logout URLs
 LOGIN_URL = "/account/login/"
+LOGIN_REDIRECT_URL = "/home/"
+LOGOUT_REDIRECT_URL = "/login/"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"

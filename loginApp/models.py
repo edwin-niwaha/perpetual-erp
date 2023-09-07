@@ -12,7 +12,7 @@ class CustomerSignUp(models.Model):
     last_name = models.CharField(max_length=250, blank=False)
     email = models.EmailField(max_length=100, blank=False)
     address = models.CharField(
-        max_length=250, default="Dhaka,Bangladesh", blank=True, null=True
+        max_length=250, default="Kampala, Uganda", blank=True, null=True
     )
     profile_picture = models.ImageField(
         upload_to="profile_pic",

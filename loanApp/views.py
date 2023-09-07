@@ -30,21 +30,6 @@ def LoanRequest(request):
 
     return render(request, "loanApp/loanrequest.html", context={"form": form})
 
-    # reason = request.POST.get('reason')
-    # amount = request.POST.get('amount')
-    # category = request.POST.get('category')
-    # year = request.POST.get('year')
-    # customer = request.user.customer
-
-    # loan_request = LoanRequest(request)
-    # loan_request.customer = customer
-    # loan_request.save()
-    # if form.is_valid():
-    #     loan_request = form.save(commit=False)
-    #     loan_request.customer = request.user.customer
-    #     print(loan_request)
-    #     return redirect('/')
-
 
 @login_required(login_url="/account/login-customer")
 def LoanPayment(request):

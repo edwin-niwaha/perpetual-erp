@@ -20,14 +20,10 @@ Loan Request
 
                 {% csrf_token %}
 
-
                 <div class="mb-4 input-group">
                     <div class="input-group-text">Loan Category</div>
                     {% render_field form.category|attr:'required:true' class="form-control" %}
                 </div>
-
-
-
 
                 <div class="mb-4 form-outline">
 
@@ -41,12 +37,22 @@ Loan Request
                     <label class="form-label">Request Amount</label>
                 </div>
 
-
-
                 <div class="mb-4 form-outline">
 
                     {% render_field form.year|attr:'required:true' type="number" class="form-control" %}
-                    <label class="form-label">How many year for loan?</label>
+                    <label class="form-label">How many years for loan?</label>
+                </div>
+
+                <div class="mb-4 form-outline">
+                    <input id="annual_interest_rate" type="number" name="annual_interest_rate" value="0" readonly
+                        class="form-control" />
+                    <label class="form-label">Annual Interest Rate</label>
+                </div>
+
+                <div class="mb-4 form-outline">
+                    <input id="monthly_prepayment" type="number" name="monthly_prepayment" value="0" readonly
+                        class="form-control" />
+                    <label class="form-label">Monthly Prepayment</label>
                 </div>
 
                 <!-- 2 column grid layout for inline styling -->
@@ -59,14 +65,9 @@ Loan Request
                         </div>
                     </div>
 
-
                 </div>
 
                 <button type="submit" class="mb-4 btn btn-primary btn-block">Send Request</button>
-
-
-
-
             </form>
         </div>
     </div>

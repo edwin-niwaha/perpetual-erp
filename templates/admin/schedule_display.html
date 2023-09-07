@@ -1,0 +1,40 @@
+{% extends 'admin/adminbase.html' %}
+
+{% load static %}
+
+
+{% block block_js %}
+<script>
+
+</script>
+{% endblock %}
+
+
+{% block css_block %}
+<style>
+
+</style>
+
+{% endblock %}
+
+{% block body_block %}
+
+<div class="container">
+   <div id="printMe" class="card-body">
+      <h1 class="text-center text-primary">Loan Amortization Schedule</h1>
+      <hr>
+      <div class="users my-5">
+         <div class="container">
+            <div class="container">
+               <div class="row">
+                  <div class="card shadow">
+                     <div class="card-header bg-white">
+                        {{ html_table|safe }}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   {% endblock %}

@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 
-var myLink = document.querySelector('a[href="#"]');
+var myLink = document.querySelector('a[href="#!"]');
 myLink.addEventListener('click', function (e) {
    e.preventDefault();
 });

@@ -1,0 +1,30 @@
+{% extends 'admin/adminbase.html' %}
+
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title_block %}
+
+{% endblock %}
+
+
+{% block body_block %}
+<!--  -->
+<div class="">
+   <div class="row">
+      <div class="col"></div>
+      <div class="col-8">
+         <p class="text-center"> -- Loan Update --
+         </p>
+         <form method="post" enctype="multipart/form-data">
+            {% csrf_token %} {{form|crispy}}
+            <input class="btn btn-dark" onclick="return confirm('Are you sure you want to Update?');" type="submit"
+               value="Update">
+         </form>
+      </div>
+      <div class="col"></div>
+   </div>
+</div>
+{% endblock %}
+<!--  -->

@@ -19,13 +19,18 @@ class loanRequest(models.Model):
     customer = models.ForeignKey(
         CustomerSignUp, on_delete=models.CASCADE, related_name="loan_customer"
     )
+
     category = models.ForeignKey(loanCategory, on_delete=models.CASCADE, null=True)
     request_date = models.DateField(auto_now_add=True)
     status_date = models.CharField(max_length=150, null=True, blank=True, default=None)
-    reason = models.TextField()
+    reason = models.CharField(
+        max_length=150,
+    )
     status = models.CharField(max_length=100, default="pending")
-    amount = models.PositiveIntegerField(default=0)
+    amount = models.FloatField(default=0)
     year = models.PositiveIntegerField(default=1)
+    annual_interest_rate = models.FloatField(default=0)
+    monthly_prepayment = models.FloatField(default=0)
 
     def __str__(self):
         return self.customer.user.username

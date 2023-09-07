@@ -14,6 +14,11 @@
 
     <!-- CSS-->
     <link href="{% static 'css/style1.css' %}" rel="stylesheet">
+    <!-- JS-->
+    <script type="text/javascript" src="{% static 'js/print.js' %}"></script>
+    <!-- JS Lib to covert html to excel -->
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <title>Admin Dashboard</title>
@@ -33,6 +38,9 @@
         <header class="header" id="header">
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i>
                 Admin Dashboard
+                <a title="Print" onclick="printDiv('printMe')">
+                    <i class="bi bi-printer-fill"></i></a>
+                <a title="Export To Excel" onclick="ExportToExcel('xlsx')"><i class="bi bi-file-excel"></i></a>
             </div>
             <div class="header_img"> <img src="{% static 'images/profile-img.jpg' %}" alt=""> </div>
         </header>

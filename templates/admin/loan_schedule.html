@@ -1,0 +1,31 @@
+{% extends 'admin/adminbase.html' %}
+
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title_block %}
+
+{% endblock %}
+
+
+{% block body_block %}
+<!--  -->
+<div class="">
+   <div class="row">
+      <div class="col"></div>
+      <div class="col-8">
+         <p class="text-center"> -- Loan Amortization Schedule --
+            <a title="Generate Loan Schedule" href="{% url 'managerApp:amortization_schedule' %}">
+               <i class="bi bi-patch-check"></i></a>
+         </p>
+         <form action="{% url 'managerApp:amortization_schedule' %}" method="post">
+            {% csrf_token %} {{form|crispy}}
+            <input class="btn btn-dark" type="submit" value="Generate Schedule">
+         </form>
+      </div>
+      <div class="col"></div>
+   </div>
+</div>
+{% endblock %}
+<!--  -->

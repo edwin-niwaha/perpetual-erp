@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from managerApp.forms import AdminLoginForm
 from django.shortcuts import redirect
@@ -9,11 +9,14 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import user_passes_test
 from loanApp.models import loanCategory, loanRequest, CustomerLoan, loanTransaction
 from .forms import LoanCategoryForm
+from loanApp.forms import LoanRequestForm
 from loginApp.models import CustomerSignUp
 from django.contrib.auth.models import User
 from datetime import date
 
 from django.db.models import Sum
+from .amortize import MortgageAmortizationSchedule
+import pandas as pd
 
 # Create your views here.
 # Create your views here.
@@ -198,6 +201,68 @@ def rejected_loan(request):
     )
 
 
+# @staff_member_required(login_url="/manager/admin-login")
+def update_loan(request, id, template_name="admin/loan_update.html"):
+    loan = get_object_or_404(loanRequest, id=id)
+    form = LoanRequestForm(request.POST or None, instance=loan)
+    if form.is_valid():
+        form.save()
+        return redirect("managerApp:loan_request")
+    return render(request, template_name, {"form": form})
+
+
+# @staff_member_required(login_url="/manager/admin-login")
+def delete_loan(request, id):
+    loans = loanRequest.objects.get(id=id)
+    loans.delete()
+    return HttpResponseRedirect(reverse("managerApp:loan_request"))
+
+
+# @staff_member_required(login_url="/manager/admin-login")
+def loan_schedule(request, id, template_name="admin/loan_schedule.html"):
+    loan = get_object_or_404(loanRequest, id=id)
+    form = LoanRequestForm(request.POST or None, instance=loan)
+    return render(request, template_name, {"form": form})
+
+
+# @staff_member_required(login_url="/manager/admin-login")
+def amortization_schedule(request):
+    form = LoanRequestForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            loan_amount = form.cleaned_data["amount"]
+            annual_interest_rate = form.cleaned_data["annual_interest_rate"]
+            monthly_prepayment = form.cleaned_data["monthly_prepayment"]
+            loan_term_years = form.cleaned_data["year"]
+            loan_term_months = int(loan_term_years) * 12
+
+            schedule, summary = MortgageAmortizationSchedule(
+                loan_amount, annual_interest_rate, loan_term_months, monthly_prepayment
+            )
+
+            df = pd.DataFrame(schedule)
+            df = df.round(0)
+            df = df.astype(int)
+            df = df.style.set_table_attributes(
+                'class="table table-striped table-bordered border-info text-center align-items-center bg-light"'
+            ).format("{:,}")
+
+            print(f"Loan schedule has been generated!")
+            print("Summary:")
+            print(summary)
+
+            html_table = df.to_html()
+            return render(
+                request,
+                "admin/schedule_display.html",
+                {
+                    "html_table": html_table,
+                },
+            )
+    context = {"form": form, "schedule": ""}
+    return render(request, "admin/loan_schedule.html", context)
+
+
 # @staff_member_required(login_url='/manager/admin-login')
 def transaction_loan(request):
     transactions = loanTransaction.objects.all()
@@ -209,8 +274,3 @@ def transaction_loan(request):
 # @login_required()
 def logout(request):
     return HttpResponseRedirect(reverse("home"))
-
-
-# def logout_view(request):
-#     logout(request)
-#     return HttpResponseRedirect(reverse("home"))
