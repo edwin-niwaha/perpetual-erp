@@ -20,26 +20,23 @@
 {% block body_block %}
 
 <div class="container">
-    <h1 class="text-center text-primary">Rejected Loan</h1>
+    <h1 class="text-center text-primary">Rejected Loans</h1>
+    <hr>
     <div class="users my-5">
-
-
-
-        <table class="table table-light table-hover table-bordered table-striped text-center">
+        <table class="table table-light table-hover table-bordered table-striped text-left">
             <thead class="bg-dark ">
                 <tr class="text-dark ">
-                    <th scope="col">SL</th>
+                    <th scope="col">#</th>
                     <th scope="col">Loan ID</th>
                     <th scope="col">User ID</th>
                     <th scope="col">Username</th>
-                    <th scope="col">Status</th>
                     <th scope="col">Category</th>
-                    <th scope="col">Amount</th>
+                    <th scope="col">Amount (UgX)</th>
                     <th scope="col">Request Date</th>
                     <th scope="col">Rejected Date</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">Customer Email</th>
-
+                    <th scope="col">Tenure(yrs)</th>
+                    <!-- <th scope="col">Customer Email</th> -->
+                    <th scope="col">Status</th>
 
                 </tr>
             </thead>
@@ -51,19 +48,19 @@
                     <td>{{loan.id}}</td>
                     <td>{{loan.customer.id}}</td>
                     <td>{{loan}}</td>
+                    <!-- <td> <img src="/media/{{user.profile_picture}}" alt="Profile Pic" height="40px" width="40px" />
+                    </td> -->
+                    <td>{{loan.category}}</td>
+                    <td style="text-align: right;">{{loan.amount}}</td>
+                    <td>{{loan.request_date}}</td>
+                    <td>{{loan.status_date}}</td>
+                    <td>{{loan.year}}</td>
+                    <!-- <td>{{loan.customer.user.email}}</td> -->
                     <td>
                         <button type="button" class="btn btn-info text-white btn-sm px-3">
                             {{loan.status}}
                         </button>
                     </td>
-                    <!-- <td> <img src="/media/{{user.profile_picture}}" alt="Profile Pic" height="40px" width="40px" />
-                    </td> -->
-                    <td>{{loan.category}}</td>
-                    <td>{{loan.amount}} Tk</td>
-                    <td>{{loan.request_date}}</td>
-                    <td>{{loan.status_date}}</td>
-                    <td>{{loan.year}}</td>
-                    <td>{{loan.customer.user.email}}</td>
 
 
                 </tr>

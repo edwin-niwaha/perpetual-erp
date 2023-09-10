@@ -219,6 +219,16 @@ def delete_loan(request, id):
 
 
 # @staff_member_required(login_url="/manager/admin-login")
+def user_notify(request, id, template_name="admin/loan_update.html"):
+    loan = get_object_or_404(loanRequest, id=id)
+    form = LoanRequestForm(request.POST or None, instance=loan)
+    if form.is_valid():
+        form.save()
+        return redirect("managerApp:loan_request")
+    return render(request, template_name, {"form": form})
+
+
+# @staff_member_required(login_url="/manager/admin-login")
 def loan_schedule(request, id, template_name="admin/loan_schedule.html"):
     loan = get_object_or_404(loanRequest, id=id)
     form = LoanRequestForm(request.POST or None, instance=loan)
@@ -259,7 +269,7 @@ def amortization_schedule(request):
                     "html_table": html_table,
                 },
             )
-    context = {"form": form, "schedule": ""}
+    context = {"form": form, "schedule": "summary"}
     return render(request, "admin/loan_schedule.html", context)
 
 

@@ -26,6 +26,21 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    # others
+    "bootstrap5",
+    "crispy_forms",
+    "crispy_bootstrap5",
+    "mathfilters",
+    "widget_tweaks",
+    # add djngle channels
+    # Daphne is an HTTP and WebSocket protocol server for ASGI (Asynchronous Server Gateway
+    # Interface) applications. It is used to handle the communication between the Django application
+    # and the web server.
+    "daphne",
+    # Django Channels is a library that allows you to build real-time applications
+    # such as chat systems, notifications, and more. By adding `"channels",` to the `INSTALLED_APPS`
+    # list, you are enabling the functionality provided by Django Channels in your project.
+    "channels",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -36,12 +51,7 @@ INSTALLED_APPS = [
     "loginApp",
     "loanApp",
     "managerApp",
-    # others
-    "bootstrap5",
-    "crispy_forms",
-    "crispy_bootstrap5",
-    "mathfilters",
-    "widget_tweaks",
+    "chat",
 ]
 
 MIDDLEWARE = [
@@ -134,6 +144,10 @@ STATICFILES_DIRS = [BASE_DIR / "static/"]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# The `CHANNEL_LAYERS` setting is used in Django Channels, which is a library that allows you to build
+# real-time applications such as chat systems, notifications, and more.
+CHANNEL_LAYERS = {"default": {"BACKEND": "channels.layers.InMemoryChannelLayer"}}
+
 
 # Login & Logout URLs
 LOGIN_URL = "/account/login/"
@@ -143,3 +157,9 @@ LOGOUT_REDIRECT_URL = "/login/"
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+# `ASGI_APPLICATION = "perpetual_erp.asgi.application"` is setting the ASGI (Asynchronous Server
+# Gateway Interface) application for the Django project. ASGI is a standard interface between web
+# servers and Python web applications or frameworks.
+ASGI_APPLICATION = "perpetual_erp.asgi.application"

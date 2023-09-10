@@ -15,9 +15,11 @@
    <div class="row">
       <div class="col"></div>
       <div class="col-8">
-         <p class="text-center"> -- Loan Amortization Schedule --
-            <a title="Generate Loan Schedule" href="{% url 'managerApp:amortization_schedule' %}">
-               <i class="bi bi-patch-check"></i></a>
+         <i class="bi bi-patch-check"></i>
+         <p class="text-center">
+            <i class="bi bi-patch-check"></i>
+            -- Loan Amortization Schedule --
+            <i class="bi bi-patch-check"></i>
          </p>
          <form action="{% url 'managerApp:amortization_schedule' %}" method="post">
             {% csrf_token %} {{form|crispy}}

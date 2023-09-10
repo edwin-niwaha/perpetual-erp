@@ -95,6 +95,8 @@ python -m pip install Pillow
 pip install django-widget-tweaks
 pip install django-mathfilters
 pip install pandas --powerful Python data analysis toolkit
+python -m pip install -U channels
+python -m pip install -U daphne
 pip install openpyxl
 pip install Jinja2
 ```

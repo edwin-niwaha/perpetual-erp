@@ -14,6 +14,7 @@ urlpatterns = [
     path("update-loan/<int:id>", views.update_loan, name="update_loan"),
     path("delete_loan/<str:id>", views.delete_loan, name="delete_loan"),
     path("generate-schedule/<int:id>", views.loan_schedule, name="loan_schedule"),
+    path("user-notify/<int:id>", views.user_notify, name="user_notify"),
     path(
         "amortize/",
         views.amortization_schedule,
